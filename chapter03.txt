@@ -1,0 +1,46 @@
+3.2.1
+$ kubectl get po kubia-zxzij -o yaml
+$ kubectl get po kubia-zxzij -o json
+
+kubectl create -f kubia-manual.yaml
+
+3.2.4
+$ kubectl logs kubia-manual
+$ kubectl logs kubia-manual -c kubia
+
+3.2.5
+$ kubectl port-forward kubia-manual 8888:8080
+... Forwarding from 127.0.0.1:8888 -> 8080
+... Forwarding from [::1]:8888 -> 8080
+
+$ curl localhost:8888
+
+
+3.3.2
+$ kubectl get pods --show-labels
+$ kubectl get po -L creation_method,env
+
+3.3.3
+$ kubectl label po kubia-manual creation_method=manual
+$ kubectl label po kubia-manual-v2 env=debug --overwrite
+
+3.4.1
+$ kubectl get po -l creation_method=manual
+$ kubectl get po -l env
+$ kubectl get po -l '!env'
+
+3.5.1
+$ kubectl label node gke-kubia-85f6-node-0rrx gpu=true
+$ kubectl get nodes -l gpu=true
+
+3.8.1
+$ kubectl delete po kubia-gpu
+
+3.8.2
+$ kubectl delete po -l creation_method=manual
+
+3.8.4
+$ kubectl delete po --all
+
+3.8.5
+$ kubectl delete all --all

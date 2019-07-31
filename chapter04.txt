@@ -1,0 +1,27 @@
+4.2.3
+$ kubectl describe rc kubia
+
+4.2.5
+$ kubectl edit rc kubia
+
+4.2.6
+$ kubectl scale rc kubia --replicas=10
+
+4.2.7
+$ kubectl delete rc kubia --cascade=false
+
+4.3.3
+$ kubectl get rs
+$ kubectl describe rs
+
+4.4.2
+$ kubectl get ds
+$ kubectl label node minikube disk=ssd
+$ kubectl label node minikube disk=hdd --overwrite
+
+4.5.3
+$ kubectl get jobs
+$ kubectl get po -a
+
+4.5.4
+$ kubectl scale job multi-completion-batch-job --replicas 3 ??? ???
