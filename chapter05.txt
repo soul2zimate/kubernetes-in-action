@@ -1,0 +1,27 @@
+5.1.1
+$ kubectl get svc
+$ kubectl exec kubia-7nog1 -- curl -s http://your.cluster.ip
+
+5.1.2
+$ kubectl exec kubia-3inly env
+
+$ kubectl exec -it kubia-3inly bash
+
+root@kubia-3inly:/# curl http://kubia.default.svc.cluster.local ??? ???
+
+5.2.1
+$ kubectl get endpoints kubia
+
+5.3.1
+$ gcloud compute firewall-rules create kubia-svc-rule --allow=tcp:30123
+
+$ kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+
+$ curl http://130.211.97.55:30123
+
+5.4.2
+$ kubectl get ingresses
+
+5.5.2
+$ kubectl edit rc kubia
+$ kubectl exec kubia-2r1qb -- touch /var/ready
